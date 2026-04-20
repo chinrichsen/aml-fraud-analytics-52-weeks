@@ -1,0 +1,9 @@
+kyc_input,risk_relevance,monitoring_output,example_use_case
+Geography,"Cross-border exposure may increase sanctions, correspondent, or jurisdictional risk",Risk score,Cross-border customers receive higher inherent risk weighting
+Geography,Jurisdiction can influence expected transaction patterns,Alert threshold,Higher-risk corridors can justify tighter thresholds
+Customer Type,"Retail, SME, and HNW customers often have different behavior patterns",Review frequency,SME and HNW profiles may require more frequent review
+Product Type,Some products support higher complexity or movement of funds,Typology flag,Trade finance and investment products can map to different scenarios
+Channel,"Digital, wire, and cash channels create different monitoring needs",Alert threshold,Wire-heavy or cash-heavy activity may trigger lower thresholds
+Source of Funds,Cash-intensive or mixed funding can increase uncertainty,Escalation rule,Cash-intensive profiles can be routed to enhanced review
+Expected Activity,Expected counts and amounts define the customer baseline,Anomaly flag,Activity materially above baseline generates monitoring observations
+Adverse Flags,Negative information can raise overall customer risk,Risk score / Escalation rule,Adverse information can increase score and trigger escalation

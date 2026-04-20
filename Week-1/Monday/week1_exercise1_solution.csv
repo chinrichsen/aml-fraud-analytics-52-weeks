@@ -1,0 +1,9 @@
+customer_id,customer_name,risk_score,risk_category,expected_behavior_summary,monitoring_attention,count_variance,amount_variance_usd,monitoring_rationale
+C001,Ava Turner,1,Low,Baseline activity aligned to onboarding profile,Standard monitoring,-2,-150,stable profile aligned to expectations
+C002,Luis Romero,9,High,Profile requires tighter thresholds and more scrutiny,Closer review and lower deviation tolerance,13,5300,cross-border exposure; adverse flags present; transaction count above expected baseline; transaction amount above expected baseline
+C003,NorthPeak Supplies LLC,3,Low,Baseline activity aligned to onboarding profile,Standard monitoring,4,2100,stable profile aligned to expectations
+C004,BlueHarbor Trading Ltd,13,High,Profile requires tighter thresholds and more scrutiny,Closer review and lower deviation tolerance,24,36200,cross-border exposure; higher-risk source of funds; adverse flags present; transaction count above expected baseline; transaction amount above expected baseline
+C005,Elena Petrov,10,High,Profile requires tighter thresholds and more scrutiny,Closer review and lower deviation tolerance,3,4800,cross-border exposure; higher-risk source of funds; adverse flags present; transaction amount above expected baseline
+C006,Mason Lee,2,Low,Baseline activity aligned to onboarding profile,Standard monitoring,1,200,stable profile aligned to expectations
+C007,GreenStone Imports,7,Medium,Some variance allowed but requires periodic review,Enhanced monitoring,5,6800,cross-border exposure; transaction count above expected baseline; transaction amount above expected baseline
+C008,Sofia Morales,6,Medium,Some variance allowed but requires periodic review,Enhanced monitoring,11,4100,higher-risk source of funds; transaction count above expected baseline; transaction amount above expected baseline
