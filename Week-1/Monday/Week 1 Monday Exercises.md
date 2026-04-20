@@ -1,174 +1,111 @@
-# Week 1 - Monday | 🛡️ Risk-Based AML Foundations
+# Week 1 Monday Exercises
 
-Welcome to **Week 1** of the 52-week AML and fraud analytics series.
+These two exercises are designed to help the reader move from **conceptual AML knowledge** to **practical analytical thinking**.
 
-This first week is about one of the most important ideas in financial crime compliance: the **risk-based AML framework**. Before you can tune rules, analyze suspicious behavior, or build advanced models, you need to understand the logic that sits underneath the whole program.
+A risk-based AML framework is important because transaction monitoring does not work well in isolation. Monitoring quality depends on the quality of the upstream customer context, including who the customer is, what activity is expected, which products and channels are used, and whether the profile carries higher-risk characteristics.
 
-This week’s Monday topic focuses on **how a risk-based AML program works**, why it matters, and how it connects to downstream transaction monitoring. In simple terms, this is where the program starts: if the foundation is weak, everything built on top of it becomes less effective.
-
----
-
-## 🎯 Why this topic matters
-
-A strong AML program is not built on random alerts or isolated controls. It is built on a framework that identifies, understands, and prioritizes risk.
-
-That means the institution must ask:
-- Who is the customer?
-- What is the expected activity?
-- What products and channels are being used?
-- What geography is involved?
-- What is the customer’s overall risk profile?
-- What behavior should be considered normal or unusual?
-
-If these questions are not answered well at onboarding and during ongoing review, then the transaction monitoring process becomes noisier, less targeted, and harder to defend.
-
-This is why the risk-based approach is so important. It is not just a compliance requirement — it is the logic that makes the rest of the AML program usable.
+In other words, if onboarding data is weak, expected behavior is weak, and the monitoring process becomes noisier, less targeted, and harder to defend. These exercises are important because they make that connection visible.
 
 ---
 
-## 🧠 Core concept
+## Exercise 1 — Build the baseline
 
-A **risk-based AML framework** means that the institution does not treat every customer, product, or transaction the same way.
+### Why this exercise is important
 
-Instead, it applies more attention and stronger controls where risk is higher, and lighter controls where risk is lower.
+This exercise is important because it teaches one of the core ideas behind risk-based AML: **customer context should shape monitoring expectations**.
 
-This approach matters because financial institutions operate at scale. They cannot investigate everything equally. They need to prioritize:
-- higher-risk customers,
-- higher-risk products,
-- unusual geographies,
-- suspicious behaviors,
-- and relationships that do not match expected patterns.
+A monitoring engine should not treat every customer the same way. A domestic salaried retail customer, a cross-border business, and a high-net-worth client with mixed funding sources do not present the same type of risk and should not be monitored with identical expectations.
 
-In practice, the risk-based model is what helps AML teams decide:
-- what to monitor,
-- how intensely to monitor it,
-- and when to escalate.
+This exercise helps the reader understand how onboarding fields can be turned into a practical baseline for monitoring. It also shows why two customers with similar transaction volumes may deserve different levels of scrutiny if their underlying profiles are materially different.
 
----
+### Objective
 
-## 🔍 How this connects to transaction monitoring
+Use the synthetic customer dataset to create a basic monitoring baseline.
 
-This week is not just about theory. It is about the operational flow from **KYC/CDD to transaction monitoring**.
+### Tasks
 
-The connection is straightforward:
-1. The customer is onboarded.
-2. KYC and CDD information is collected.
-3. The institution forms an expected customer profile.
-4. That profile becomes the baseline for monitoring.
-5. Transactions are compared against that expected behavior.
-6. Alerts are generated when activity looks inconsistent, risky, or suspicious.
+1. Review each customer profile in the synthetic dataset.
+2. Identify which fields are most useful for initial risk assessment.
+3. Create a simple risk category such as **Low**, **Medium**, or **High**.
+4. Define expected behavior based on the customer profile.
+5. Compare expected behavior against the sample activity values.
+6. Document which customers would likely receive more monitoring attention and explain why.
 
-So transaction monitoring does not operate in a vacuum. It depends on the quality of the upstream customer information.
+### Suggested fields to review
 
-If onboarding data is incomplete, inaccurate, or poorly maintained, the monitoring logic becomes weaker. That can lead to:
-- more false positives,
-- missed risk,
-- poor segmentation,
-- and weak investigative outcomes.
+- `customer_type`
+- `geography`
+- `product_type`
+- `channel`
+- `source_of_funds`
+- `expected_monthly_txn_count`
+- `actual_monthly_txn_count`
+- `expected_monthly_txn_amount_usd`
+- `actual_monthly_txn_amount_usd`
+- `adverse_flags`
 
----
+### Expected output
 
-## 📌 What risk-based means in practice
+Create a small analytical table with at least the following columns:
 
-A risk-based model typically considers multiple dimensions at once. For example:
-
-- **Customer risk**: Who is the customer? What is their background, occupation, ownership structure, or business type?
-- **Geographic risk**: Where are they located? Where do they send or receive funds?
-- **Product risk**: What accounts, services, or instruments are being used?
-- **Channel risk**: Are they using branch, digital, wire, cash, or third-party channels?
-- **Behavioral risk**: Does the activity match the customer profile?
-- **Relationship risk**: Are there unusual counterparties or connections?
-
-These dimensions are combined into a broader view of risk. That view is then used to shape monitoring, review frequency, escalation thresholds, and investigative focus.
+- `customer_id`
+- `risk_category`
+- `expected_behavior_summary`
+- `monitoring_attention`
+- `monitoring_rationale`
 
 ---
 
-## 🧩 The analytics angle
+## Exercise 2 — Map KYC inputs to monitoring outputs
 
-From an analytics perspective, the risk-based AML model is the first layer of structure.
+### Why this exercise is important
 
-It gives analysts a way to:
-- segment the customer base,
-- prioritize monitoring,
-- compare expected versus actual behavior,
-- and identify where the program is producing the most noise.
+This exercise is important because it makes the bridge between **KYC/CDD inputs** and **transaction monitoring design** explicit.
 
-This is where analytics begins to add value:
-- by reducing blind spots,
-- by improving alert quality,
-- by highlighting mismatches between profile and behavior,
-- and by helping teams focus on the riskiest activity.
+In many AML programs, onboarding information is collected, but the operational link between customer data and monitoring logic is not always clearly documented. This exercise helps show that KYC is not just a compliance formality. It is an operational input into alert design, risk scoring, review prioritization, and escalation workflows.
 
-Even at this early stage, good analytics work can improve program effectiveness. A clean foundation means better rules, better scoring, and better outcomes later.
+It is also important from an analytics perspective because it helps analysts explain *why* a field matters, *how* it affects monitoring logic, and *where* it should influence downstream controls.
 
----
+### Objective
 
-## 💡 Practical example
+Create a mapping file that connects onboarding attributes to monitoring outputs.
 
-Imagine two customers:
+### Tasks
 
-### Customer A
-- salaried employee,
-- local domestic activity,
-- low transaction volume,
-- consistent monthly behavior,
-- limited counterparties.
+1. Build a mapping file with the following columns:
+   - `kyc_input`
+   - `risk_relevance`
+   - `monitoring_output`
+   - `example_use_case`
+2. Include fields such as:
+   - geography
+   - customer type
+   - product type
+   - channel
+   - source of funds
+   - expected activity
+   - adverse flags
+3. For each input, explain how it affects monitoring design.
+4. Link each input to at least one downstream output such as:
+   - risk score
+   - alert threshold
+   - review frequency
+   - escalation rule
+   - typology flag
+5. Save the output as a CSV or spreadsheet.
 
-### Customer B
-- complex business structure,
-- multiple jurisdictions,
-- higher cash movement,
-- irregular transfer patterns,
-- new counterparties appearing frequently.
+### Expected output
 
-A risk-based AML program would not treat these two customers the same way.
-
-Customer B would likely require more scrutiny, more monitoring attention, and possibly stronger review intensity. Customer A might still be monitored, but the expected behavior and alert sensitivity may differ.
-
-This is the practical value of the risk-based approach: it helps the institution assign attention where it matters most.
-
----
-## 📈 What the workbook or notebook should show
-
-The notebook or workbook should remain simple and readable.
-
-A strong first version could include:
-- synthetic customer records,
-- expected monthly activity,
-- actual monthly activity,
-- a few key risk flags,
-- a basic rule or score,
-- and a short explanation of the output.
-
-The goal is to show the logic, not to model every possible AML scenario.
+Create a mapping table that clearly explains how customer information gathered during onboarding can influence downstream monitoring rules, review intensity, and investigative prioritization.
 
 ---
 
-## 🔄 Why this matters
+## Files used in these exercises
 
-Transaction monitoring is more effective when it starts from a customer baseline.
+- `week1_synthetic_customer_dataset.csv`
+- `week1_exercise1_solution.csv`
+- `week1_exercise2_solution.csv`
 
-If onboarding data is weak, the monitoring system has to rely on generic thresholds that may create too many false positives or miss meaningful behavior shifts. A risk-based approach helps focus attention where it matters most.
+## Final note
 
-This is especially important for analytics work because the quality of the upstream data determines the quality of the downstream alerts, investigations, and reporting.
-
----
-
-## 📚 Further reading
-
-If you want to explore the ideas behind this exercise more deeply, these references are a good starting point:
-
-- [FinCEN fact sheet on a risk-based AML/CFT program](https://www.fincen.gov/system/files/shared/Program-NPRM-FactSheet-508.pdf)
-- [FINRA AML overview](https://www.finra.org/rules-guidance/key-topics/aml)
-- [Risk-based approach to AML screening](https://dilisense.com/en/insights/what-is-a-risk-based-approach-in-aml-screening)
-- [Embracing a risk-based approach to AML](https://financialcrimeacademy.org/risk-based-approach-to-aml-compliance/)
-- [Understanding risk-based approach in AML for effective compliance](https://www.au10tix.com/blog/understanding-risk-based-approach-in-aml-for-effective-compliance/)
-- [Combining KYC data with transaction monitoring for better risk insights](https://www.linkedin.com/pulse/combining-kyc-data-transaction-monitoring-better-risk-insights-izqff)
-- [KYC integration guide: steps for financial institutions](https://shadowdragon.io/blog/kyc-integration/)
-- [How to implement transaction monitoring: best practices for AML compliance](https://www.sanctions.io/blog/transaction-monitoring-aml-compliance-best-practices)
-- [9 best practices for an efficient transaction monitoring system](https://complyadvantage.com/insights/transaction-monitoring-best-practices/)
-- [Synthetic data in AML: promise, pitfalls, and persistent skepticism](https://amlpartners.com/insights/synthetic-data-in-aml/)
-- [A synthetic data set to benchmark anti-money laundering methods](https://www.nature.com/articles/s41597-023-02569-2)
-- [Your AI training strategies are risky: synthetic data generation](https://www.cxtoday.com/ai-automation-in-cx/synthetic-data-generation-is-your-compliance-shortcut/)
-
----
+These exercises are intentionally simple. The goal is not to simulate a full production AML program. The goal is to build a clear analytical foundation that shows how customer context feeds monitoring logic.
