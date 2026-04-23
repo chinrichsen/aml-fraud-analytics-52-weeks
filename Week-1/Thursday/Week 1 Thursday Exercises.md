@@ -1,111 +1,137 @@
-# Week 1 Monday Exercises
+# Week 1 Thursday — Hands-On Exercises
 
-These two exercises are designed to help the reader move from **conceptual AML knowledge** to **practical analytical thinking**.
+This folder contains the hands-on materials for **Week 1 Thursday** of the AML and fraud analytics series.
 
-A risk-based AML framework is important because transaction monitoring does not work well in isolation. Monitoring quality depends on the quality of the upstream customer context, including who the customer is, what activity is expected, which products and channels are used, and whether the profile carries higher-risk characteristics.
+The purpose of these exercises is to show a simple but very important truth in financial crime analytics:
 
-In other words, if onboarding data is weak, expected behavior is weak, and the monitoring process becomes noisier, less targeted, and harder to defend. These exercises are important because they make that connection visible.
+> **Alert quality is only as good as the data feeding the monitoring system.**
+
+When upstream data is incomplete, stale, duplicated, or misclassified, the downstream alert environment becomes less reliable. These exercises are designed to make that relationship visible and practical.
 
 ---
 
-## Exercise 1 — Build the baseline
+## What is included in this folder?
 
-### Why this exercise is important
+This folder includes:
+- a synthetic dataset with intentional data quality issues,
+- an Exercise 1 solution file,
+- an Exercise 2 solution file,
+- and this instruction file.
 
-This exercise is important because it teaches one of the core ideas behind risk-based AML: **customer context should shape monitoring expectations**.
+The goal is not to simulate a full production AML environment. The goal is to create a clear learning artifact that helps readers understand how upstream data problems affect alert quality.
 
-A monitoring engine should not treat every customer the same way. A domestic salaried retail customer, a cross-border business, and a high-net-worth client with mixed funding sources do not present the same type of risk and should not be monitored with identical expectations.
+---
 
-This exercise helps the reader understand how onboarding fields can be turned into a practical baseline for monitoring. It also shows why two customers with similar transaction volumes may deserve different levels of scrutiny if their underlying profiles are materially different.
+## Why these exercises are important
+
+This topic matters because transaction monitoring depends on the quality of the input data.
+
+If customer records are missing key fields, if risk ratings are stale, if transaction codes are wrong, or if customer updates are delayed, the monitoring engine may produce:
+- false positives,
+- missed alerts,
+- weak segmentation,
+- poor escalation decisions,
+- and lower investigative confidence.
+
+That means data quality is not just a technical concern. It is a **financial crime control issue**.
+
+---
+
+## Exercise 1 — Identify the data quality issue
 
 ### Objective
 
-Use the synthetic customer dataset to create a basic monitoring baseline.
+Inspect each record in the synthetic dataset and determine what data quality issue is present.
 
-### Tasks
+### What you should do
 
-1. Review each customer profile in the synthetic dataset.
-2. Identify which fields are most useful for initial risk assessment.
-3. Create a simple risk category such as **Low**, **Medium**, or **High**.
-4. Define expected behavior based on the customer profile.
-5. Compare expected behavior against the sample activity values.
-6. Document which customers would likely receive more monitoring attention and explain why.
+1. Review each record in the dataset.
+2. Identify the data quality issue.
+3. Explain how the issue could affect alert quality.
+4. Decide whether the problem is likely caused by the rule itself or by upstream data.
+5. Suggest the most likely remediation.
 
-### Suggested fields to review
+### Why this exercise matters
 
-- `customer_type`
-- `geography`
-- `product_type`
-- `channel`
-- `source_of_funds`
-- `expected_monthly_txn_count`
-- `actual_monthly_txn_count`
-- `expected_monthly_txn_amount_usd`
-- `actual_monthly_txn_amount_usd`
-- `adverse_flags`
+This exercise is important because it teaches that bad alerts are not always caused by bad rules.
 
-### Expected output
+In many cases, the real issue is upstream: a missing geography field, a stale risk rating, a duplicate customer profile, or incorrect transaction coding. If analysts only look at the alert, they may miss the true root cause.
 
-Create a small analytical table with at least the following columns:
+### Deliverable
 
+Create a solution table with at least the following columns:
+- `record_id`
 - `customer_id`
-- `risk_category`
-- `expected_behavior_summary`
-- `monitoring_attention`
-- `monitoring_rationale`
+- `issue_flag`
+- `monitoring_issue`
+- `root_cause`
+- `alert_quality_assessment`
+- `recommended_fix`
 
 ---
 
-## Exercise 2 — Map KYC inputs to monitoring outputs
-
-### Why this exercise is important
-
-This exercise is important because it makes the bridge between **KYC/CDD inputs** and **transaction monitoring design** explicit.
-
-In many AML programs, onboarding information is collected, but the operational link between customer data and monitoring logic is not always clearly documented. This exercise helps show that KYC is not just a compliance formality. It is an operational input into alert design, risk scoring, review prioritization, and escalation workflows.
-
-It is also important from an analytics perspective because it helps analysts explain *why* a field matters, *how* it affects monitoring logic, and *where* it should influence downstream controls.
+## Exercise 2 — Map data quality issues to monitoring outcomes
 
 ### Objective
 
-Create a mapping file that connects onboarding attributes to monitoring outputs.
+Build a mapping file that connects data quality problems to their downstream monitoring impact.
 
-### Tasks
+### What you should do
 
 1. Build a mapping file with the following columns:
-   - `kyc_input`
-   - `risk_relevance`
-   - `monitoring_output`
-   - `example_use_case`
-2. Include fields such as:
-   - geography
-   - customer type
-   - product type
-   - channel
-   - source of funds
-   - expected activity
-   - adverse flags
-3. For each input, explain how it affects monitoring design.
-4. Link each input to at least one downstream output such as:
-   - risk score
-   - alert threshold
-   - review frequency
-   - escalation rule
-   - typology flag
-5. Save the output as a CSV or spreadsheet.
+   - `data_issue`
+   - `where_it_occurs`
+   - `monitoring_impact`
+   - `likely_alert_outcome`
+   - `possible_control`
+2. Include issues such as:
+   - missing geography,
+   - stale risk rating,
+   - duplicate customer record,
+   - incorrect transaction coding,
+   - missing expected activity,
+   - delayed onboarding update.
+3. For each issue, explain how it changes monitoring behavior.
+4. Link each issue to at least one downstream consequence such as:
+   - false positives,
+   - missed alerts,
+   - mis-segmentation,
+   - weak escalation,
+   - reduced investigation confidence.
+5. Save the output as a CSV file.
 
-### Expected output
+### Why this exercise matters
 
-Create a mapping table that clearly explains how customer information gathered during onboarding can influence downstream monitoring rules, review intensity, and investigative prioritization.
+This exercise is important because it makes the connection between **data quality** and **alert quality** explicit.
+
+A control failure may begin long before the alert appears. In AML, the monitoring system often reflects the quality of the upstream data environment, so understanding this link is essential for both analysts and control owners.
+
+### Deliverable
+
+Create a mapping table with at least the following columns:
+- `data_issue`
+- `where_it_occurs`
+- `monitoring_impact`
+- `likely_alert_outcome`
+- `possible_control`
 
 ---
 
-## Files used in these exercises
+## How to use the files
 
-- `week1_synthetic_customer_dataset.csv`
-- `week1_exercise1_solution.csv`
-- `week1_exercise2_solution.csv`
+- Open the dataset and inspect the records.
+- Work through the exercises before looking at the solutions.
+- Use the solution files to check your understanding.
+- Use the mapping file as a reference for how upstream defects can translate into monitoring problems.
 
-## Final note
+---
 
-These exercises are intentionally simple. The goal is not to simulate a full production AML program. The goal is to build a clear analytical foundation that shows how customer context feeds monitoring logic.
+## Learning outcome
+
+By the end of these exercises, the reader should be able to:
+- identify common upstream data quality problems,
+- explain how those problems affect alert quality,
+- distinguish between a rule problem and a data problem,
+- and describe how monitoring controls depend on the reliability of customer and transaction data.
+
+That is a critical skill in AML analytics, because a strong monitoring program needs both **good logic** and **good data**.
