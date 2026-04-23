@@ -1,0 +1,11 @@
+record_id,customer_id,customer_name,geography,customer_type,risk_rating,expected_monthly_txn_count,actual_monthly_txn_count,transaction_code,expected_activity,source_system,issue_flag,notes
+R001,C101,Apex Retail LLC,Domestic,SME,Medium,24,26,WIRE,Moderate,CRM,None,Clean reference record
+R002,C102,Blue River Imports,Cross-Border,SME,High,30,51,WIRE,High,CRM,Stale risk rating,Risk rating should have been updated after onboarding review
+R003,C103,Carson Mills,,Retail,Low,10,12,ACH,Low,CoreBank,Missing geography,Geography field blank in monitoring feed
+R004,C104,Delta Supplies,Domestic,SME,High,28,29,WIRE,Moderate,CRM,Duplicate customer record,Same customer appears twice under different IDs
+R005,C105,Evergreen Trading,Cross-Border,SME,High,35,63,CASH,High,Branch,Incorrect transaction coding,Cash coded as internal transfer in one feed
+R006,C106,Frost Family Trust,Domestic,High Net Worth,High,14,16,ACH,Moderate,CRM,Missing expected activity,Expected activity field not populated in monitoring model
+R007,C107,Gale Medical Group,Domestic,SME,Medium,18,19,ACH,Moderate,CoreBank,Delayed onboarding update,Customer upgraded to higher risk but feed not refreshed
+R008,C108,Harbor Logistics,Cross-Border,SME,High,40,44,WIRE,High,CRM,None,Stable higher-risk profile
+R009,C109,Ivory Services,Domestic,Retail,Low,8,22,ACH,Low,CoreBank,Duplicate customer record,Second profile created during migration
+R010,C110,Juno Capital,Cross-Border,High Net Worth,High,12,14,WIRE,Moderate,CRM,None,Reference high-risk wealth profile
