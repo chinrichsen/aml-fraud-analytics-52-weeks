@@ -1,8 +1,0 @@
-data_issue,where_it_occurs,monitoring_impact,likely_alert_outcome,possible_control
-Missing geography,Data ingestion / customer profile,Mis-segmentation,Potential false negatives in higher-risk corridors,Require mandatory geography at onboarding
-Stale risk rating,Customer review / refresh cycle,Threshold mismatch,Alerts may be too loose or too strict,Refresh risk rating after periodic review
-Duplicate customer record,Merging / identity resolution,Activity fragmentation,Missed alerts or diluted scenario hits,Implement dedupe and golden-record controls
-Incorrect transaction coding,Transaction mapping / ETL layer,Wrong scenario routing,False negatives or wrong alert type,Add code validation and mapping tests
-Missing expected activity,Customer onboarding / profile build,Weak baseline,Normal activity can look suspicious,Require expected activity before monitoring
-Delayed onboarding update,File refresh / interface latency,Outdated monitoring posture,False positives or missed risk changes,Shorten refresh SLA and reconcile updates
-Stale risk rating,Governance / periodic KYC review,Poor prioritization,Review queue may not reflect current risk,Tie risk rating to review governance
