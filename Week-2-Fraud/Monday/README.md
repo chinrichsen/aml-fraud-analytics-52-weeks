@@ -1,105 +1,103 @@
-# Week 1 - Monday | 🛡️ Risk-Based AML Foundations
+# Week 2 - Monday | ⚡ Velocity Fraud Detection Patterns
 
-Welcome to **Week 1** of the 52-week AML and fraud analytics series.
+Welcome to **Week 2** of the 52-week AML and fraud analytics series.
 
-This first week is about one of the most important ideas in financial crime compliance: the **risk-based AML framework**. Before you can tune rules, analyze suspicious behavior, or build advanced models, you need to understand the logic that sits underneath the whole program.
+This week shifts from AML foundations into a core fraud detection concept: **velocity fraud detection patterns**. Before you can build effective fraud rules or behavioral models, you need to understand how rapid, repeated, or unusual activity can reveal risk.
 
-This week’s Monday topic focuses on **how a risk-based AML program works**, why it matters, and how it connects to downstream transaction monitoring. In simple terms, this is where the program starts: if the foundation is weak, everything built on top of it becomes less effective.
+This Monday topic focuses on **how velocity patterns work**, why they matter in fraud analytics, and how they connect to account takeover detection and behavioral monitoring. In simple terms, this is where suspicious speed, repetition, and intensity can start to look like fraud.
 
 ---
 
 ## 🎯 Why this topic matters
 
-A strong AML program is not built on random alerts or isolated controls. It is built on a framework that identifies, understands, and prioritizes risk.
+A strong fraud program is not built on isolated transactions alone. It is built on the ability to see patterns across time, frequency, and behavior.
 
 That means the institution must ask:
-- Who is the customer?
-- What is the expected activity?
-- What products and channels are being used?
-- What geography is involved?
-- What is the customer’s overall risk profile?
-- What behavior should be considered normal or unusual?
+- How often is the customer logging in or transacting?
+- Is the activity happening faster than expected?
+- Are there repeated actions in a short window?
+- Does the pattern match normal customer behavior?
+- Is the activity consistent with the customer’s historical baseline?
+- Could this be account takeover or another fast-moving fraud event?
 
-If these questions are not answered well at onboarding and during ongoing review, then the transaction monitoring process becomes noisier, less targeted, and harder to defend.
+If these questions are not answered well, then the fraud monitoring process becomes noisier, less targeted, and slower to react.
 
-This is why the risk-based approach is so important. It is not just a compliance requirement — it is the logic that makes the rest of the AML program usable.
+This is why velocity patterns are so important. They are one of the clearest ways to detect suspicious bursts of behavior before losses grow.
 
 ---
 
 ## 🧠 Core concept
 
-A **risk-based AML framework** means that the institution does not treat every customer, product, or transaction the same way.
+A **velocity fraud detection pattern** means the system looks for unusually fast or repeated activity within a defined time window.
 
-Instead, it applies more attention and stronger controls where risk is higher, and lighter controls where risk is lower.
+Instead of focusing only on what happened, the monitoring logic asks:
+- how many times did it happen,
+- how quickly did it happen,
+- and whether that pace is normal for the customer.
 
-This approach matters because financial institutions operate at scale. They cannot investigate everything equally. They need to prioritize:
-- higher-risk customers,
-- higher-risk products,
-- unusual geographies,
-- suspicious behaviors,
-- and relationships that do not match expected patterns.
+This approach matters because fraud is often time-sensitive. Fraudsters may:
+- test credentials,
+- make rapid login attempts,
+- move funds quickly,
+- change account details,
+- or use multiple channels in a short period.
 
-In practice, the risk-based model is what helps AML teams decide:
+In practice, velocity monitoring helps fraud teams decide:
 - what to monitor,
-- how intensely to monitor it,
-- and when to escalate.
+- which thresholds to use,
+- and when to escalate quickly.
 
 ---
 
-## 🔍 How this connects to transaction monitoring
+## 🔍 How this connects to account takeover
 
-This week is not just about theory. It is about the operational flow from **KYC/CDD to transaction monitoring**.
+This week is not just about theory. It is about the operational flow from **velocity detection to ATO monitoring**.
 
 The connection is straightforward:
-1. The customer is onboarded.
-2. KYC and CDD information is collected.
-3. The institution forms an expected customer profile.
-4. That profile becomes the baseline for monitoring.
-5. Transactions are compared against that expected behavior.
-6. Alerts are generated when activity looks inconsistent, risky, or suspicious.
+1. Customer activity is observed.
+2. The system measures frequency, repetition, or speed.
+3. The activity is compared against a baseline.
+4. Velocity thresholds are evaluated.
+5. Suspicious bursts or anomalies generate alerts.
+6. Alerts may point to account takeover or other fraud behavior.
 
-So transaction monitoring does not operate in a vacuum. It depends on the quality of the upstream customer information.
+So fraud detection does not operate in a vacuum. It depends on the quality of the behavioral signals and the way the system measures activity over time.
 
-If onboarding data is incomplete, inaccurate, or poorly maintained, the monitoring logic becomes weaker. That can lead to:
-- more false positives,
-- missed risk,
-- poor segmentation,
-- and weak investigative outcomes.
+If the monitoring logic is too loose, fraud may move too far before being detected. If it is too strict, the program may create too much noise.
 
 ---
 
-## 📌 What risk-based means in practice
+## 📌 What velocity means in practice
 
-A risk-based model typically considers multiple dimensions at once. For example:
+A velocity model typically considers multiple dimensions at once. For example:
 
-- **Customer risk**: Who is the customer? What is their background, occupation, ownership structure, or business type?
-- **Geographic risk**: Where are they located? Where do they send or receive funds?
-- **Product risk**: What accounts, services, or instruments are being used?
-- **Channel risk**: Are they using branch, digital, wire, cash, or third-party channels?
-- **Behavioral risk**: Does the activity match the customer profile?
-- **Relationship risk**: Are there unusual counterparties or connections?
+- **Login velocity**: How many login attempts occur in a short time?
+- **Transaction velocity**: How many transactions happen within a specific window?
+- **Channel velocity**: Is the customer using multiple channels rapidly?
+- **Change velocity**: Are account details changing too quickly?
+- **Behavioral velocity**: Does the speed of activity differ from the customer’s normal pattern?
 
-These dimensions are combined into a broader view of risk. That view is then used to shape monitoring, review frequency, escalation thresholds, and investigative focus.
+These dimensions are combined into a broader view of fraud risk. That view is then used to shape alerting logic, case prioritization, and escalation thresholds.
 
 ---
 
 ## 🧩 The analytics angle
 
-From an analytics perspective, the risk-based AML model is the first layer of structure.
+From an analytics perspective, velocity detection is one of the first places where behavior and timing become highly useful.
 
 It gives analysts a way to:
-- segment the customer base,
-- prioritize monitoring,
-- compare expected versus actual behavior,
-- and identify where the program is producing the most noise.
+- compare observed behavior against historical patterns,
+- identify rapid bursts of activity,
+- detect repeated events across short intervals,
+- and prioritize cases that look operationally urgent.
 
-This is where analytics begins to add value:
-- by reducing blind spots,
-- by improving alert quality,
-- by highlighting mismatches between profile and behavior,
+This is where analytics starts to add value:
+- by detecting suspicious acceleration,
+- by improving alert precision,
+- by highlighting deviations from normal behavior,
 - and by helping teams focus on the riskiest activity.
 
-Even at this early stage, good analytics work can improve program effectiveness. A clean foundation means better rules, better scoring, and better outcomes later.
+Even at this stage, good analytics can help prevent losses by surfacing abnormal speed early.
 
 ---
 
@@ -108,49 +106,47 @@ Even at this early stage, good analytics work can improve program effectiveness.
 Imagine two customers:
 
 ### Customer A
-- salaried employee,
-- local domestic activity,
-- low transaction volume,
-- consistent monthly behavior,
-- limited counterparties.
+- steady login frequency,
+- moderate transaction volume,
+- stable behavior over time,
+- limited change in account details.
 
 ### Customer B
-- complex business structure,
-- multiple jurisdictions,
-- higher cash movement,
-- irregular transfer patterns,
-- new counterparties appearing frequently.
+- multiple failed logins in a short period,
+- sudden increase in transfers,
+- fast changes to contact information,
+- new payees added rapidly.
 
-A risk-based AML program would not treat these two customers the same way.
+A fraud program would not treat these two customers the same way.
 
-Customer B would likely require more scrutiny, more monitoring attention, and possibly stronger review intensity. Customer A might still be monitored, but the expected behavior and alert sensitivity may differ.
+Customer B would likely require more scrutiny, faster escalation, and possibly stronger account takeover controls. Customer A might still be monitored, but the alert sensitivity would be lower.
 
-This is the practical value of the risk-based approach: it helps the institution assign attention where it matters most.
+This is the practical value of velocity detection: it helps the institution respond to suspicious speed before the situation becomes worse.
 
 ---
-## 📈 What the workbook or notebook should show
+
+## 📈 What the notebook or workbook should show
 
 The notebook or workbook should remain simple and readable.
 
 A strong first version could include:
-- synthetic customer records,
-- expected monthly activity,
-- actual monthly activity,
-- a few key risk flags,
+- synthetic activity records,
+- login or transaction counts by time window,
+- a few key velocity indicators,
 - a basic rule or score,
 - and a short explanation of the output.
 
-The goal is to show the logic, not to model every possible AML scenario.
+The goal is to show the logic, not to model every possible fraud scenario.
 
 ---
 
 ## 🔄 Why this matters
 
-Transaction monitoring is more effective when it starts from a customer baseline.
+Fraud monitoring is more effective when it can see bursts, repetition, and change over time.
 
-If onboarding data is weak, the monitoring system has to rely on generic thresholds that may create too many false positives or miss meaningful behavior shifts. A risk-based approach helps focus attention where it matters most.
+If the monitoring logic only looks at isolated events, it may miss the speed and sequence that often define fraud. A velocity-based approach helps focus attention where it matters most.
 
-This is especially important for analytics work because the quality of the upstream data determines the quality of the downstream alerts, investigations, and reporting.
+This is especially important for analytics work because the quality of the behavioral signals determines the quality of the alerts, investigations, and reporting.
 
 ---
 
@@ -158,17 +154,15 @@ This is especially important for analytics work because the quality of the upstr
 
 If you want to explore the ideas behind this exercise more deeply, these references are a good starting point:
 
-- [FinCEN fact sheet on a risk-based AML/CFT program](https://www.fincen.gov/system/files/shared/Program-NPRM-FactSheet-508.pdf)
-- [FINRA AML overview](https://www.finra.org/rules-guidance/key-topics/aml)
-- [Risk-based approach to AML screening](https://dilisense.com/en/insights/what-is-a-risk-based-approach-in-aml-screening)
-- [Embracing a risk-based approach to AML](https://financialcrimeacademy.org/risk-based-approach-to-aml-compliance/)
-- [Understanding risk-based approach in AML for effective compliance](https://www.au10tix.com/blog/understanding-risk-based-approach-in-aml-for-effective-compliance/)
-- [Combining KYC data with transaction monitoring for better risk insights](https://www.linkedin.com/pulse/combining-kyc-data-transaction-monitoring-better-risk-insights-izqff)
-- [KYC integration guide: steps for financial institutions](https://shadowdragon.io/blog/kyc-integration/)
-- [How to implement transaction monitoring: best practices for AML compliance](https://www.sanctions.io/blog/transaction-monitoring-aml-compliance-best-practices)
-- [9 best practices for an efficient transaction monitoring system](https://complyadvantage.com/insights/transaction-monitoring-best-practices/)
-- [Synthetic data in AML: promise, pitfalls, and persistent skepticism](https://amlpartners.com/insights/synthetic-data-in-aml/)
-- [A synthetic data set to benchmark anti-money laundering methods](https://www.nature.com/articles/s41597-023-02569-2)
-- [Your AI training strategies are risky: synthetic data generation](https://www.cxtoday.com/ai-automation-in-cx/synthetic-data-generation-is-your-compliance-shortcut/)
+- [How social engineering drives account takeover and what digital banking solutions can do to stop it](https://www.ft.com/content/3f3f7a4a-2b7e-4b72-bbfe-2d2b4d7ebd4a)  
+- [Account takeover scams are bypassing fraud defenses](https://www.pcs.com/blog/account-takeover-scams-are-bypassing-fraud-defenses/)  
+- [Fraud detection dashboard | real-time machine learning analytics for financial risk](https://www.inetsoft.com/solutions/fraud-management-dashboard/)  
+- [Using fraud data analytics to detect and prevent fraud](https://www.fraud.com/blog/using-fraud-data-analytics-to-detect-and-prevent-fraud/)  
+- [Navigating false positives and the future of transaction monitoring](https://alessa.com/blog/navigating-false-positives-transaction-monitoring/)  
+- [False positives in transaction monitoring – what we can do better](https://www.amlcube.com/post/false-positives-in-transaction-monitoring-what-we-can-do-better)  
+- [The problem of false positives in AML screening](https://www.sanctions.io/blog/the-problem-of-false-positives-in-aml-screening)  
+- [Fraud management dashboard](https://www.inetsoft.com/solutions/fraud-management-dashboard/)  
 
 ---
+
+
