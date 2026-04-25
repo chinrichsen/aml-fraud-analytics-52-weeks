@@ -1,0 +1,9 @@
+customer_id,customer_name,velocity_score,behavior_category,recommended_action,monitoring_rationale
+F001,Northwind Retail,0,Normal,No immediate escalation,aligned to baseline
+F002,Aster Home Goods,9,High Risk,Immediate fraud review / possible hold,high login velocity; rapid payee additions; device change; multiple IP changes; failed login burst
+F003,Blue Harbor LLC,3,Elevated,Review / step-up authentication,high transaction velocity
+F004,Cedar Health Group,10,High Risk,Immediate fraud review / possible hold,high login velocity; high transaction velocity; rapid payee additions; device change; multiple IP changes; failed login burst
+F005,Delta Market,0,Normal,No immediate escalation,aligned to baseline
+F006,Evergreen Travel,10,High Risk,Immediate fraud review / possible hold,high login velocity; high transaction velocity; rapid payee additions; device change; multiple IP changes; failed login burst
+F007,Fulton Tech,1,Normal,No immediate escalation,aligned to baseline
+F008,Granite Consulting,9,High Risk,Immediate fraud review / possible hold,high login velocity; rapid payee additions; device change; multiple IP changes; failed login burst

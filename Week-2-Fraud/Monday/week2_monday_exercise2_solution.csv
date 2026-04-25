@@ -1,0 +1,9 @@
+fraud_input,risk_relevance,monitoring_output,example_use_case
+login_attempts_15m,Rapid login attempts can indicate credential testing or takeover,velocity threshold,Trigger alert when logins exceed baseline multiple
+transactions_1h,Fast bursts of payments or transfers can signal fraud staging,velocity rule,Alert when hourly transactions spike
+payee_additions_1h,New payees added quickly can indicate fraud setup,behavioral anomaly flag,Route to ATO or mule-risk review
+device_changes_24h,Device changes may indicate account compromise,step-up authentication,Require re-verification when device changes occur
+ip_changes_24h,Repeated IP changes can indicate suspicious access patterns,risk score / alert threshold,Increase risk score for multiple IP shifts
+failed_logins_1h,Many failed logins can indicate credential stuffing or takeover attempts,ATO flag,Escalate when failed logins exceed threshold
+baseline_login_attempts_15m,Baseline defines normal customer behavior,anomaly comparison,Compare current activity to historical pattern
+baseline_transactions_1h,Baseline defines expected transaction pace,anomaly comparison,Flag activity materially above expected frequency

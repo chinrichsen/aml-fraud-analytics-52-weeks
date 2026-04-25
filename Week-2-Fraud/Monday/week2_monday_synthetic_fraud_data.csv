@@ -1,0 +1,9 @@
+customer_id,customer_name,channel,login_attempts_15m,transactions_1h,payee_additions_1h,device_changes_24h,ip_changes_24h,failed_logins_1h,baseline_login_attempts_15m,baseline_transactions_1h,risk_segment,issue_flag
+F001,Northwind Retail,Mobile,2,1,0,0,0,0,2,1,Low,None
+F002,Aster Home Goods,Web,11,3,4,1,3,7,3,1,Medium,Velocity spike
+F003,Blue Harbor LLC,Mobile,4,8,2,0,1,1,4,3,Medium,ATO pattern
+F004,Cedar Health Group,Web,14,6,5,2,4,9,3,2,High,ATO pattern
+F005,Delta Market,Mobile,1,2,0,0,0,0,1,2,Low,None
+F006,Evergreen Travel,Web,9,9,3,1,2,6,2,2,High,Velocity spike
+F007,Fulton Tech,Mobile,5,1,0,0,0,1,5,1,Medium,None
+F008,Granite Consulting,Web,12,4,6,2,5,8,3,1,High,ATO pattern
