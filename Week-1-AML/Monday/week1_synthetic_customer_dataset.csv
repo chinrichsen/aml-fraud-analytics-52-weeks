@@ -1,0 +1,9 @@
+customer_id,customer_name,customer_type,geography,product_type,channel,source_of_funds,expected_monthly_txn_count,actual_monthly_txn_count,expected_monthly_txn_amount_usd,actual_monthly_txn_amount_usd,adverse_flags,notes
+C001,Ava Turner,Retail,Domestic,Checking,Branch,Salary,12,10,3200,3050,No,Stable domestic salary profile
+C002,Luis Romero,Retail,Cross-Border,Checking,Digital,Salary,15,28,4500,9800,Yes,Cross-border activity above expected baseline
+C003,NorthPeak Supplies LLC,SME,Domestic,Business Account,Wire,Business Revenue,30,34,28000,30100,No,Business profile with modest variance
+C004,BlueHarbor Trading Ltd,SME,Cross-Border,Business Account,Digital,Cash-Intensive,22,46,25000,61200,Yes,High variance and elevated inherent risk
+C005,Elena Petrov,High Net Worth,Cross-Border,Investment,Digital,Mixed,18,21,40000,44800,Yes,Complex profile with elevated baseline risk
+C006,Mason Lee,Retail,Domestic,Savings,Digital,Salary,8,9,2200,2400,No,Low-risk digital retail profile
+C007,GreenStone Imports,SME,Cross-Border,Trade Finance,Wire,Business Revenue,26,31,52000,58800,No,Trade-related cross-border activity
+C008,Sofia Morales,Retail,Domestic,Checking,ATM/Cash,Cash-Intensive,14,25,5000,9100,No,Cash usage materially above expected pattern
