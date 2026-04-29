@@ -1,0 +1,9 @@
+customer_id,customer_name,device_known,new_device_flag,new_ip_flag,login_failures_24h,password_reset_24h,payee_additions_24h,email_change_24h,phone_change_24h,login_geo_change_24h,transfer_count_24h,baseline_risk,issue_flag
+A001,Harbor Retail,Yes,0,0,0,0,0,0,0,0,1,Low,None
+A002,Meridian Home,No,1,1,6,1,2,1,0,1,4,Medium,ATO risk
+A003,Summit Health,Yes,0,1,2,0,4,0,1,0,7,High,Behavior shift
+A004,Cedar Logistics,No,1,1,8,1,5,1,1,1,9,High,ATO risk
+A005,Northbrook Family,Yes,0,0,0,0,0,0,0,0,2,Low,None
+A006,Pioneer Consulting,No,1,1,4,1,3,0,1,1,5,Medium,ATO risk
+A007,Riverstone Tech,Yes,0,0,1,0,1,0,0,0,1,Low,None
+A008,Atlas Imports,No,1,1,7,1,6,1,1,1,10,High,ATO risk

@@ -1,0 +1,9 @@
+fraud_input,risk_relevance,monitoring_output,example_use_case
+new_device_flag,A new device can indicate compromised access,ATO flag / step-up auth,Challenge login when device is unfamiliar
+new_ip_flag,IP changes may indicate session hijacking or proxy use,risk score,Increase score for suspicious network change
+login_failures_24h,Many failures can indicate credential stuffing or takeover attempt,velocity threshold,Alert when failures exceed threshold
+password_reset_24h,Reset activity often follows compromise or takeover,escalation rule,Escalate when reset is followed by other anomalies
+payee_additions_24h,Rapid payee adds can indicate fraud setup,behavioral anomaly flag,Flag rapid beneficiary changes
+email_change_24h,Email changes can help an attacker lock out the real user,ATO indicator,Route to takeover review
+phone_change_24h,Phone changes can reroute OTP and alerts,step-up auth / escalation,Challenge when phone is changed
+login_geo_change_24h,New geography can indicate unusual access location,risk score / anomaly flag,Increase risk for sudden geo change

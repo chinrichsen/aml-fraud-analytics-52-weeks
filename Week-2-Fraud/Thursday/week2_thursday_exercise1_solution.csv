@@ -1,0 +1,9 @@
+customer_id,customer_name,ato_score,behavior_category,recommended_action,monitoring_rationale
+A001,Harbor Retail,0,Normal,No immediate action,aligned to baseline
+A002,Meridian Home,10,High Risk,Immediate review / possible account restriction,new device; new IP; failed login burst; password reset; rapid payee additions; email change; geo change; post-access transfer activity
+A003,Summit Health,6,Elevated,Step-up authentication / monitor closely,new IP; failed login burst; rapid payee additions; phone change; post-access transfer activity
+A004,Cedar Logistics,13,High Risk,Immediate review / possible account restriction,new device; new IP; failed login burst; password reset; rapid payee additions; email change; phone change; geo change; post-access transfer activity
+A005,Northbrook Family,0,Normal,No immediate action,aligned to baseline
+A006,Pioneer Consulting,9,High Risk,Immediate review / possible account restriction,new device; new IP; failed login burst; password reset; rapid payee additions; phone change; geo change; post-access transfer activity
+A007,Riverstone Tech,0,Normal,No immediate action,aligned to baseline
+A008,Atlas Imports,13,High Risk,Immediate review / possible account restriction,new device; new IP; failed login burst; password reset; rapid payee additions; email change; phone change; geo change; post-access transfer activity
