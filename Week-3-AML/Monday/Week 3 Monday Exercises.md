@@ -1,21 +1,21 @@
-# Week 2 Thursday Exercises — Account Takeover Behavioral Models
+# Week 3 Monday Exercises — CRR Model Inputs & Weighting
 
-This folder contains the hands-on materials for **Week 2 Thursday** of the 52-week AML and fraud analytics series.
+This folder contains the hands-on materials for **Week 3 Monday** of the 52-week AML and fraud analytics series.
 
-The theme for this week is **account takeover (ATO) behavioral models**. The key idea is that takeover fraud often shows up as a change in behavior rather than a single obvious event. A customer may suddenly use a new device, change IP location, reset a password, add payees quickly, or move money shortly after suspicious access. Those patterns can be strong indicators of compromise.
+The theme for this week is **customer risk rating (CRR)**. The key idea is that risk ratings are not based on one field alone. A good CRR model combines multiple customer inputs, applies weights, and produces a consistent risk view that can support due diligence and escalation.
 
-These exercises are important because they help the reader understand one of the most practical truths in fraud analytics:
+These exercises are important because they help the reader understand one of the most practical truths in AML analytics:
 
-> **ATO usually appears as a cluster of abnormal behaviors.**
+> **Moving the weights can change the risk rating.**
 
-The goal is not to build a production fraud engine. The goal is to create a clear learning artifact that shows how login, device, profile, and transaction changes can be combined into a meaningful behavioral model.
+The goal is not to build a production risk engine. The goal is to create a clear learning artifact that shows how customer attributes can be translated into a risk score and how different weighting schemes can change the final rating.
 
 ---
 
 ## What is included in this folder?
 
 This folder includes:
-- a synthetic dataset with ATO behavior indicators,
+- a synthetic customer dataset,
 - an Exercise 1 solution file,
 - an Exercise 2 solution file,
 - and this instruction file.
@@ -26,105 +26,99 @@ The files are designed to be easy to understand, easy to explain, and easy to ex
 
 ## Why these exercises are important
 
-ATO detection matters because takeover attacks often move quickly and quietly.
+CRR matters because AML teams need a structured way to identify which customers require more scrutiny.
 
 Examples include:
-- new device usage,
-- new IP addresses,
-- repeated failed logins,
-- password resets,
-- rapid payee additions,
-- profile changes,
-- and transaction activity that starts right after access changes.
+- different customer types,
+- domestic vs. cross-border activity,
+- product and channel differences,
+- source of funds,
+- ownership complexity,
+- adverse media,
+- PEP exposure,
+- and sanctions proximity.
 
-If fraud detection only looks at isolated events, it can miss the behavior cluster that defines an account takeover attack. These exercises help show how multiple signals can be combined into a stronger risk view.
+If the model does not weight inputs carefully, it may understate high-risk customers or overstate low-risk ones. These exercises help show how scoring logic changes when weights are adjusted.
 
 ---
 
-## Exercise 1 — Classify ATO behavior
+## Exercise 1 — Calculate the CRR score
 
 ### Objective
 
-Use the synthetic dataset to evaluate each customer’s activity and decide whether the behavior looks normal, elevated, or high risk.
+Use the synthetic dataset to calculate a customer risk score using a weighted formula.
 
 ### What you should do
 
 1. Review each customer record in the synthetic dataset.
-2. Compare current behavior against the customer baseline.
-3. Identify signs of suspicious access or takeover.
-4. Classify each case as normal, elevated, or high risk.
+2. Assign a score to each risk input.
+3. Apply a weighted formula to calculate the CRR score.
+4. Convert the score into a risk tier such as Low, Medium, or High.
 5. Recommend the most appropriate monitoring action.
 
 ### Why this exercise matters
 
-This exercise is important because it teaches how ATO detection focuses on **behavioral change** rather than just one transaction or login event.
+This exercise is important because it teaches how CRR models turn customer information into a numeric risk view.
 
-A customer may not show a single massive transfer, but if they suddenly use a new device, fail multiple logins, reset the password, and add payees quickly, the pattern can still be highly suspicious.
+It also shows that changing the weight of a single factor can change the final score and potentially the risk tier. That is one of the most important ideas in model design and tuning.
+
+### Example formula
+
+A simple CRR formula could look like this:
+
+`CRR Score = (Customer Type × 0.20) + (Geography × 0.15) + (Product × 0.15) + (Channel × 0.10) + (Source of Funds × 0.10) + (Ownership Complexity × 0.10) + (Adverse Media × 0.10) + (PEP × 0.05) + (Sanctions × 0.05)`
+
+You can tune the weights to see how the output changes.
 
 ### Deliverable
 
 Create a solution table with at least the following columns:
 - `customer_id`
 - `customer_name`
-- `ato_score`
-- `behavior_category`
-- `recommended_action`
-- `monitoring_rationale`
+- `crr_score_formula`
+- `risk_tier`
+- `monitoring_action`
 
 ---
 
-## Exercise 2 — Map fraud inputs to monitoring outputs
+## Exercise 2 — Compare two weighting schemes
 
 ### Objective
 
-Build a mapping file that connects ATO-related signals to downstream monitoring actions.
+Recalculate the CRR score using two different sets of weights and observe how the final risk tier changes.
 
 ### What you should do
 
-1. Build a mapping file with the following columns:
-   - `fraud_input`
-   - `risk_relevance`
-   - `monitoring_output`
-   - `example_use_case`
-2. Include fields such as:
-   - new device flag,
-   - new IP flag,
-   - login failures,
-   - password reset,
-   - payee additions,
-   - email change,
-   - phone change,
-   - login geography change.
-3. For each input, explain how it influences ATO monitoring.
-4. Link each input to at least one downstream output such as:
-   - ATO flag,
-   - step-up authentication,
-   - anomaly flag,
-   - risk score,
-   - escalation rule.
-5. Save the output as a CSV or spreadsheet.
+1. Use the same synthetic customer dataset.
+2. Apply Weight Set A.
+3. Apply Weight Set B.
+4. Compare the resulting scores and risk tiers.
+5. Identify which customers changed risk tiers when the weights were adjusted.
 
 ### Why this exercise matters
 
-This exercise is important because it makes the connection between **behavioral signals** and **monitoring logic** explicit.
+This exercise is important because it shows that a CRR model is not static.
 
-It helps the reader understand that ATO detection is not about one isolated indicator. It is about combining access, identity, device, and transaction signals into a pattern that looks more like an attacker than the legitimate account holder.
+When weights change, the model can prioritize different risk drivers. For example, a scheme that emphasizes geography more heavily may push cross-border customers higher, while another scheme that emphasizes adverse media more heavily may change the ranking of customers with reputation concerns.
 
 ### Deliverable
 
-Create a mapping table with at least the following columns:
-- `fraud_input`
-- `risk_relevance`
-- `monitoring_output`
-- `example_use_case`
+Create a comparison table with at least the following columns:
+- `customer_id`
+- `customer_name`
+- `score_weights_a`
+- `tier_weights_a`
+- `score_weights_b`
+- `tier_weights_b`
+- `tier_changed`
 
 ---
 
 ## How to use the files
 
-- Open the synthetic dataset and inspect the behavior patterns.
+- Open the synthetic dataset and inspect the customer attributes.
 - Work through Exercise 1 before reviewing the solution file.
-- Use the Exercise 2 mapping file to understand how fraud inputs translate into monitoring logic.
+- Use Exercise 2 to understand how tuning weights affects the rating.
 - Review the solution files to check your interpretation.
 
 ---
@@ -132,9 +126,9 @@ Create a mapping table with at least the following columns:
 ## Learning outcome
 
 By the end of these exercises, the reader should be able to:
-- recognize signs of account takeover behavior,
-- compare current behavior to a baseline,
-- identify when multiple suspicious signals form a takeover pattern,
-- and explain how fraud signals should drive monitoring decisions.
+- calculate a simple CRR score,
+- understand how different customer inputs contribute to the score,
+- see how changing weights affects the final rating,
+- and explain how CRR supports review and due diligence decisions.
 
-That is a critical skill in fraud analytics, because a strong fraud program needs both **good behavioral signals** and **good decision logic**.
+That is a critical skill in AML analytics, because a strong risk model needs both **good inputs** and **good weighting logic**.
