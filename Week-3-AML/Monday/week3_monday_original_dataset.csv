@@ -1,0 +1,7 @@
+customer_id,customer_name,customer_type,geography,product_type,channel,expected_monthly_txn_count,expected_monthly_txn_amount_usd,source_of_funds,adverse_media_flag,pep_flag,sanctions_flag,ownership_complexity,baseline_risk,priority_review
+C301,North Peak Retail,Retail,Domestic,Standard checking,Digital,22,8500,Salary,0,0,0,Low,Low,Annual
+C302,Arbor Holdings LLC,Business,Cross-border,Wire / treasury,Digital,48,124000,Operating revenue,1,0,0,High,High,Quarterly
+C303,Blue Stone Imports,Business,Cross-border,Wires / cash deposits,Branch + digital,60,210000,Trade receipts,0,1,0,Medium,High,Quarterly
+C304,Canyon Family Trust,Private wealth,Domestic,Investments / wires,Relationship manager,16,98000,Wealth / investments,0,0,0,Medium,Medium,Semiannual
+C305,Delta Care Services,Business,Domestic,Payroll / ACH,Branch + digital,34,41000,Service revenue,0,0,0,Low,Medium,Semiannual
+C306,Evergreen Trading Co,Business,Cross-border,Wires / cash deposits,Digital,72,260000,Trade receipts,1,0,0,High,High,Quarterly
