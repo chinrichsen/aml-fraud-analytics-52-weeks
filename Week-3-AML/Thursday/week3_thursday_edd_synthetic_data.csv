@@ -1,7 +1,9 @@
 customer_id,customer_name,customer_type,geography,crr_score_0_100,adverse_media,pep,sanctions,ownership_complexity,cross_border_activity,cash_intensity,expected_activity_mismatch,transaction_spike,sudden_profile_change,current_review_outcome
-H001,Atlas Import Group,Business,Cross-border,1,1,0,1,1,1,0,1,0,1,EDD
-H002,Bright Side Retail,Retail,Domestic,0,0,0,0,0,0,0,0,0,0,Standard
-H003,Cedar Family Office,Private wealth,Cross-border,1,0,1,0,1,1,0,1,0,0,EDD
-H004,Delta Community Health,Business,Domestic,0,0,0,0,0,0,0,0,0,0,Standard
-H005,Evergreen Payments LLC,Business,Cross-border,1,1,1,1,1,1,1,1,0,1,EDD
-H006,Frontier Logistics,Business,Domestic,0,1,0,0,1,0,0,1,0,0,EDD
+H001,Atlas Import Group,Business,Cross-border,78,1,0,0,1,1,0,0,1,1,EDD
+H002,Bright Side Retail,Retail,Domestic,42,0,0,0,0,0,0,0,0,0,Standard
+H003,Cedar Family Office,Private wealth,Cross-border,82,0,1,0,1,0,1,0,0,0,EDD
+H004,Delta Community Health,Business,Domestic,46,0,0,0,0,0,0,0,0,0,Standard
+H005,Evergreen Payments LLC,Business,Cross-border,91,1,1,1,1,1,1,1,1,1,EDD
+H006,Frontier Logistics,Business,Domestic,67,0,0,0,1,1,0,0,1,0,EDD
+H007,Granite Travel Co,Business,Cross-border,58,0,0,0,1,0,1,0,0,1,EDD
+H008,Harbor Local Markets,Retail,Domestic,35,0,0,0,0,0,0,0,0,0,Standard

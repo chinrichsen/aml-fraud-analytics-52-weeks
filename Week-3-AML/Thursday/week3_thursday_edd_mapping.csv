@@ -1,6 +1,0 @@
-trigger,risk_relevance,monitoring_output,example_use_case
-High CRR score,Customer exceeds threshold and requires deeper review,EDD flag,Use score cutoff to route cases to enhanced review
-Adverse media,External reputation concern,Escalation rule,Escalate if score is moderate but adverse media exists
-PEP exposure,Potentially elevated political exposure risk,EDD flag,Apply stronger review for PEP-linked customers
-Sanctions proximity,Higher regulatory and screening concern,Immediate escalation,Route to sanctions/compliance review
-Cross-border activity,More complex geographic risk profile,Risk score uplift,Increase risk score for cross-border customers
