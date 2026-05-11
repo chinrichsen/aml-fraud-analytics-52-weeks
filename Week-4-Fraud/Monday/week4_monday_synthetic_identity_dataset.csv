@@ -1,0 +1,9 @@
+record_id,customer_name,customer_type,file_depth,account_age,identity_consistency,phone_reuse,email_reuse,address_reuse,device_reuse,ip_risk,synthetic_indicator,manual_risk_label,feature_score,risk_tier,recommended_action
+S001,North Star Retail,Retail,Stable,1-12 mo,Consistent,Same,Same,Same,Same,Low,No,Low,8,High,Investigate and hold for review
+S002,Riverline App,New,Thin-file,<1 mo,Mismatched,Reused,Reused,Reused,Shared,High,Yes,High,10,High,Investigate and hold for review
+S003,Cedar Credit,New,Thin-file,<1 mo,Partial,Shared,Same,Same,Shared,Medium,Yes,High,8,High,Investigate and hold for review
+S004,Metro Supplies,Business,Moderate,12+ mo,Consistent,Same,Same,Same,Same,Low,No,Low,1,Low,Standard onboarding
+S005,Echo Finance,New,Thin-file,<1 mo,Mismatched,Shared,Shared,Reused,Shared,High,Yes,High,9,High,Investigate and hold for review
+S006,Pine Local,Retail,Stable,1-12 mo,Partial,Same,Same,Same,Same,Low,No,Low,2,Low,Standard onboarding
+S007,Summit Pay,New,Thin-file,<1 mo,Partial,Shared,Reused,Same,Shared,High,Yes,High,8,High,Investigate and hold for review
+S008,Harbor Works,Business,Moderate,12+ mo,Consistent,Same,Shared,Same,Same,Low,No,Low,1,Low,Standard onboarding
