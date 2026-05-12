@@ -1,0 +1,9 @@
+application_id,customer_name,application_type,file_depth,account_age,identity_consistency,phone_reuse,email_reuse,address_reuse,device_reuse,ip_risk,synthetic_indicator,manual_risk_label
+T001,Aster Bank,New,Thin-file,<1 mo,Mismatched,Reused,Reused,Reused,Shared,High,Yes,High
+T002,Blue Harbor Retail,New,Stable,1-12 mo,Consistent,Same,Same,Same,Same,Low,No,Low
+T003,Cedar Lending,New,Thin-file,<1 mo,Partial,Shared,Reused,Same,Shared,High,Yes,High
+T004,Delta Credit,Existing,Moderate,12+ mo,Consistent,Same,Same,Same,Same,Low,No,Low
+T005,Echo Finance,New,Thin-file,<1 mo,Mismatched,Shared,Shared,Reused,Shared,High,Yes,High
+T006,Fjord Payments,New,Thin-file,<1 mo,Partial,Shared,Same,Reused,Shared,High,Yes,High
+T007,Grove Markets,Existing,Stable,12+ mo,Consistent,Same,Shared,Same,Same,Low,No,Low
+T008,Harbor Loans,New,Thin-file,<1 mo,Mismatched,Reused,Shared,Reused,Shared,High,Yes,High
